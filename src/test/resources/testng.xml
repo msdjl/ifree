@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="DefaultSuite" verbose="1" >
+    <test name="DefaultTest" >
+        <packages>
+            <package name="com.ifree.api.tests.*" />
+        </packages>
+    </test>
+</suite>

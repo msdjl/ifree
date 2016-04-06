@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "error_code": {
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 10
+    },
+    "message": {
+      "type": "string",
+      "pattern": "^Unable to create Order: offer\\(s\\) \\[(\\d+(,{1} ?\\d+)*)\\] is unavailable$"
+    }
+  },
+  "required": ["error_code","message"]
+}

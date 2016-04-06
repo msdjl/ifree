@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+	"name": {
+      "$ref": "#/definitions/varchar255",
+      "pattern": "^(\\w+) (\\w+) (\\w+)$"
+	},
+	"phone": {
+      "$ref": "#/definitions/varchar255"
+	},
+	"region": {
+      "$ref": "#/definitions/varchar255"
+	},
+	"city": {
+      "$ref": "#/definitions/varchar255"
+	},
+	"address": {
+	  "$ref": "#/definitions/varchar255"
+	},
+	"clientTime": {
+	  "type": "integer",
+      "minimum": 1
+	},
+	"delivery_id": {
+      "$ref": "#/definitions/intKey"
+	},
+	"payment_method_id": {
+      "$ref": "#/definitions/intKey"
+	},
+	"delivery_price": {
+	  "type": "number"
+	},
+	"products": {
+	  "type": "array",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "product": {
+            "$ref": "#/definitions/intKey"
+		  },
+		  "price": {
+            "type": "number",
+            "minimum": 0
+		  },
+		  "amount": {
+            "$ref": "#/definitions/intKey"
+		  }
+		},
+		"required": ["product","price","amount"]
+	  }
+	},
+	"email": {
+      "$ref": "#/definitions/varchar255"
+	},
+	"comment": {
+	  "type": "string"
+	},
+	"postal_code": {
+	  "type": "integer",
+      "minimum": 100000,
+      "maximum": 999999
+	},
+	"device_id": {
+	  "type": "string"
+	}
+  },
+  "required": [
+	"name",
+	"phone",
+	"region",
+	"city",
+	"address",
+	"clientTime",
+	"delivery_id",
+	"payment_method_id",
+	"delivery_price",
+	"products"
+  ],
+  "definitions": {
+    "varchar255": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "intKey": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": ["order_id"]
+}

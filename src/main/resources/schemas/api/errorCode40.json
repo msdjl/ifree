@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "error_code": {
+      "type": "integer",
+      "minimum": 40,
+      "maximum": 40
+    },
+    "message": {
+      "type": "string",
+      "pattern": "^Invalid request$"
+    }
+  },
+  "required": ["error_code","message"]
+}
