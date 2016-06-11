@@ -16,7 +16,7 @@ public class CorrectOrderCreationTest extends TestBase {
     private String field;
     private Response response;
 
-    public CorrectOrderCreationTest(String field) {
+    private CorrectOrderCreationTest(String field) {
         this.field = field;
     }
 

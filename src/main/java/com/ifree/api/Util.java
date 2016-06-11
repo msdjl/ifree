@@ -12,7 +12,7 @@ import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonS
 public class Util {
     public final static String baseUrl = System.getProperty("baseUrl", "http://127.0.0.1:8080");
 
-    public static boolean isValidJSON(String jsonString, Class<?> target) throws Exception {
+    public static boolean isValidJSON(String jsonString, Class<?> target) {
         Meta m = target.getAnnotation(Meta.class);
         boolean isValid;
         isValid = matchesJsonSchemaInClasspath(m.schema()).matches(jsonString);
